@@ -1,9 +1,7 @@
-import BASE_URL from './configRota';
-
 export default function useAgendamentos() {
     const buscarAgendamentos = async (userID) => {
         try {
-            const response = await fetch(`${BASE_URL}/buscarAgendamentos`, {
+            const response = await fetch("http://localhost:4000/buscarAgendamentos", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import BASE_URL from '../configRota';
 
 const usePacientes = () => {
     const [pacientes, setPacientes] = useState([]);
@@ -10,7 +9,7 @@ const usePacientes = () => {
         const buscarPacientes = async () => {
             const userID = localStorage.getItem("userID");
             try {
-                const resposta = await fetch(`${BASE_URL}/dadosPacientes`, {
+                const resposta = await fetch('http://localhost:4000/dadosPacientes', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ userID })

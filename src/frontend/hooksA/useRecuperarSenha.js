@@ -1,12 +1,11 @@
 import { useNavigate } from 'react-router-dom';
-import BASE_URL from './configRota';
 
 export default function useRecuperarSenha() {
     const navigate = useNavigate();
 
     const enviarCodigo = async (email, setMensagemErro, setDesabilitado) => {
         try {
-            const resposta = await fetch(`${BASE_URL}/recuperarSenha`, {
+            const resposta = await fetch("http://localhost:4000/recuperarSenha", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
